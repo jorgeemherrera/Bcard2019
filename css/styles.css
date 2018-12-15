@@ -163,12 +163,52 @@ ul.usuarios--redes__secundarias li:last-child a {
   border-radius: 0.5em;
   background-color: rgba(255, 255, 255, 0.431);
 }
-.wrap--item p {
+.wrap--item p.wrap--item_titulo, .wrap--item p.wrap--item__subtitulo {
+  font-family: "Fira Sans", sans-serif;
+}
+.wrap--item p.wrap--item_titulo {
+  color: #14596D;
+  font-size: 1.1em;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.5em 1em 0em 0.5em !important;
+}
+.wrap--item p.wrap--item__subtitulo {
+  color: #ADA64F;
+  font-size: 1em;
+  text-transform: uppercase;
+  padding: 0em 1em 0em 0.5em !important;
+}
+.wrap--item p.wrap--item__descripcion {
   font-family: "Rubik", sans-serif;
   font-weight: 400;
   color: #404040;
   padding: 1em 1em !important;
   font-size: 1em;
+}
+
+.reconocimientos h1,
+.portafolio--servicios h1 {
+  text-transform: uppercase;
+  font-family: "Fira Sans", sans-serif;
+  margin: 3em 1em 0.5em 0.5em !important;
+  font-size: 2em;
+  font-weight: 300;
+  color: #A00D3B;
+}
+.reconocimientos .portafolio--servicios__titulo,
+.portafolio--servicios .portafolio--servicios__titulo {
+  padding: 0.7em 1em 0em 0.7em !important;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  color: #A00D3B;
+  font-weight: 700;
+  text-align: center;
+}
+.reconocimientos .portafolio--servicios__imagen,
+.portafolio--servicios .portafolio--servicios__imagen {
+  margin-top: 1em;
 }
 
 .usuario--sitio,
@@ -198,6 +238,7 @@ ul.usuarios--redes__secundarias li:last-child a {
   margin-top: 1em;
   background-color: #07B9EC;
   border-radius: 1em 1em 0em 0em;
+  margin-bottom: 4em;
 }
 .barra--solicitar a {
   padding: 0.4em 0em;

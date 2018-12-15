@@ -216,11 +216,54 @@ ul {
     border-radius: .5em;
     background-color: rgba(255, 255, 255, 0.431);
     p {
+        &.wrap--item_titulo,
+        &.wrap--item__subtitulo {
+            font-family: $fs;
+        }
+        &.wrap--item_titulo {
+            color: $blueDark;
+            font-size: 1.1em;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: .5em 1em 0em .5em !important;
+        }
+        &.wrap--item__subtitulo {
+            color: $gold;
+            font-size: 1em;
+            text-transform: uppercase;
+            padding: 0em 1em 0em .5em !important;
+        }
+    }
+    p.wrap--item__descripcion {
         font-family: $rk;
         font-weight: 400;
         color: $gray;
         padding: 1em 1em !important;
         font-size: 1em;
+    }
+}
+
+.reconocimientos,
+.portafolio--servicios {
+    h1 {
+        text-transform: uppercase;
+        font-family: $fs;
+        margin: 3em 1em 0.5em .5em !important;
+        font-size: 2em;
+        font-weight: 300;
+        color: $redBcard;
+    }
+    .portafolio--servicios__titulo {
+        padding: .7em 1em 0em .7em !important;
+        font-family: $fs;
+        font-size: 1.2em;
+        text-transform: uppercase;
+        color: $redBcard;
+        font-weight: 700;
+        text-align: center;
+    }
+    .portafolio--servicios__imagen {
+        margin-top: 1em;
     }
 }
 
@@ -252,6 +295,7 @@ ul {
     margin-top: 1em;
     background-color: $blueLite;
     border-radius: 1em 1em 0em 0em;
+    margin-bottom: 4em;
     a {
         padding: .4em 0em;
         color: $white;
