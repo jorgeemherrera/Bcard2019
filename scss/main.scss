@@ -1,8 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Rubik:400,500,700');
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,400,700');
+@import '_colors';
 $upper: uppercase;
-$text: 1.1em;
-$text_2: 1.2em;
+$br: 50%;
+$fs: 'Fira Sans',
+sans-serif;
+$rk: 'Rubik',
+sans-serif;
+$bxsh: 0px 0px 20px 5px rgba(64,
+64,
+64,
+0.15);
 * {
     margin-right: 0px !important;
     margin-left: 0px !important;
@@ -11,4 +19,271 @@ $text_2: 1.2em;
     box-sizing: border-box;
     // font-family: 'Fira-Sans', sans-serif;
     // font-family: 'Rubik', sans-serif;
+}
+
+.navbar-brand {
+    float: right !important;
+    padding: 13px 13px !important;
+}
+
+.navbar-default {
+    .navbar-toggle {
+        float: left !important;
+        margin-left: 8px !important;
+        border: none !important;
+        margin-bottom: -10px !important;
+        &:hover {
+            background-color: transparent !important;
+        }
+    }
+    .navbar-header {
+        p {
+            display: block;
+            font-family: $fs;
+            color: $gray;
+            float: left;
+        }
+        img {
+            &.icono--menu {
+                width: 15% !important;
+                display: block;
+            }
+        }
+    }
+    .navbar-collapse {
+        .navbar-nav {
+            li {
+                font-family: $fs;
+                a {
+                    padding-left: 1em !important;
+                }
+            }
+        }
+    }
+}
+
+.usuario--info {
+    img {
+        border-radius: 0% 0% 55% 55%;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        &.usuario--info__logo {
+            width: 50% !important;
+            margin: auto 25% !important;
+        }
+    }
+    .usuario--info__compartir {
+        display: flex;
+        position: relative;
+        z-index: 2;
+        background-color: $redBcard;
+        width: 68px;
+        border-radius: $br;
+        height: 68px;
+        margin: -26% 64% !important;
+        i {
+            padding: 30% !important;
+            color: $white;
+            font-size: 2em;
+        }
+    }
+    p {
+        &.usuario--info__nombre,
+        &.usuario--info__cargo {
+            display: flex;
+            justify-content: center;
+            font-family: $fs;
+        }
+        &.usuario--info__nombre {
+            color: $blueLite;
+            font-size: 2em;
+            margin-top: 40%;
+            font-weight: 700;
+        }
+        &.usuario--info__cargo {
+            color: $gray;
+            font-size: 1.3em;
+            span {
+                &:after {
+                    content: "";
+                    display: block;
+                    height: 2px;
+                    margin: 10px auto;
+                    position: relative;
+                    width: 100px;
+                    z-index: 2;
+                    border-radius: 5%;
+                    background: $gold;
+                }
+            }
+        }
+    }
+}
+
+ul.usuarios--redes__principales,
+ul.usuarios--redes__secundarias {
+    margin: 5px;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    text-decoration: none;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    li {
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        margin-right: 12px !important;
+        text-align: center;
+        a {
+            border: 2px solid;
+            display: inline-block;
+            height: 45px;
+            width: 45px;
+            border-radius: 50%;
+            padding: 9px 0px;
+            font-size: 1.4em;
+            margin: 1em 0em;
+            cursor: pointer;
+            i {
+                line-height: 1em;
+                font-size: 1.1em;
+            }
+        }
+    }
+}
+
+ul {
+    &.usuarios--redes__principales {
+        li {
+            &:first-child {
+                a {
+                    color: #25d366;
+                }
+            }
+            &:nth-child(2) {
+                a {
+                    color: #179947;
+                }
+            }
+        }
+    }
+    &.usuarios--redes__secundarias {
+        li {
+            &:first-child {
+                a {
+                    color: $redBcard;
+                }
+            }
+            &:nth-child(2) {
+                a {
+                    color: #3b5998;
+                }
+            }
+            &:nth-child(3) {
+                a {
+                    color: #1da1f2;
+                }
+            }
+            &:nth-child(4) {
+                a {
+                    color: #8a3ab9;
+                }
+            }
+            &:nth-child(5) {
+                a {
+                    color: #0077B5;
+                }
+            }
+            &:last-child {
+                a {
+                    color: red;
+                }
+            }
+        }
+    }
+}
+
+.wrap--item {
+    box-shadow: $bxsh;
+    margin: 0em 1em !important;
+    border-radius: .5em;
+    background-color: rgba(255, 255, 255, 0.431);
+    p {
+        font-family: $rk;
+        font-weight: 400;
+        color: $gray;
+        padding: 1em 1em !important;
+        font-size: 1em;
+    }
+}
+
+.usuario--sitio,
+.usuario--direccion {
+    padding: 15px;
+    box-shadow: $bxsh;
+    margin: 1em 1em !important;
+    border-radius: .5em;
+    background-color: rgba(255, 255, 255, 0.431);
+    a {
+        font-family: $fs;
+        color: $redBcard;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.usuario--sitio {
+    a {
+        font-size: .9em;
+    }
+}
+
+.barra--solicitar {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+    background-color: $blueLite;
+    border-radius: 1em 1em 0em 0em;
+    a {
+        padding: .4em 0em;
+        color: $white;
+        font-size: 1.5em;
+        text-shadow: -4px 0px 3px rgba(11, 103, 126, 0.82);
+        text-decoration: none;
+        font-family: $fs;
+    }
+}
+
+.menu--fijo {
+    bottom: 0;
+    position: fixed;
+    background-image: linear-gradient($redBcard, #50071E);
+    width: 100%;
+    height: 55px;
+    ul {
+        &.menu--fijo__items {
+            display: flex;
+            list-style-type: none;
+            flex-direction: row;
+            justify-content: space-around;
+            li {
+                margin: 4% auto !important;
+                a {
+                    color: $white;
+                    cursor: pointer;
+                    i {
+                        font-size: 1.5em;
+                    }
+                }
+            }
+        }
+    }
 }
