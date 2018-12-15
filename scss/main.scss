@@ -29,7 +29,7 @@ $bxsh: 0px 0px 20px 5px rgba(64,
 .navbar-default {
     .navbar-toggle {
         float: left !important;
-        margin-left: 8px !important;
+        margin-left: 15px !important;
         border: none !important;
         margin-bottom: -10px !important;
         &:hover {
@@ -59,6 +59,12 @@ $bxsh: 0px 0px 20px 5px rgba(64,
                 }
             }
         }
+    }
+    .navbar-nav>li>a {
+        color: $redBcard;
+    }
+    .navbar-nav>.active>a {
+        color: $blueLite;
     }
 }
 
@@ -217,7 +223,9 @@ ul {
     background-color: rgba(255, 255, 255, 0.431);
     p {
         &.wrap--item_titulo,
-        &.wrap--item__subtitulo {
+        &.wrap--item__subtitulo,
+        &.wrap--item__anio,
+        &.wrap--item__calificacion--subtitulo {
             font-family: $fs;
         }
         &.wrap--item_titulo {
@@ -225,13 +233,18 @@ ul {
             font-size: 1.1em;
             font-weight: 700;
             text-transform: uppercase;
-            padding: .5em 1em 0em .5em !important;
+            padding: 0.5em 1em 0em .9em !important;
         }
         &.wrap--item__subtitulo {
             color: $gold;
             font-size: 1em;
             text-transform: uppercase;
-            padding: 0em 1em 0em .5em !important;
+            padding: 0em 1em 0em .9em !important;
+        }
+        &.wrap--item__anio {
+            color: $redBcard;
+            font-size: .9em;
+            padding: 0em 1em 0em .9em !important;
         }
     }
     p.wrap--item__descripcion {
@@ -240,6 +253,179 @@ ul {
         color: $gray;
         padding: 1em 1em !important;
         font-size: 1em;
+    }
+    img.wrap--item__calificacion {
+        display: inline-flex;
+        max-width: 100px !important;
+        border-radius: 50%;
+        float: left;
+        margin: 1em !important;
+        transition: filter ease-in-out .3s;
+    }
+    .wrap--item__calificacion--subtitulo {
+        color: $gold;
+        font-size: 1.2em;
+        text-transform: uppercase;
+        padding: 1em 1em 0em .9em !important;
+    }
+    .wrap--item__calificacion--container {
+        width: 100%;
+        margin: 1em;
+        text-align: center;
+    }
+    .star {
+        background-color: transparent;
+        border: 0;
+        outline: 0;
+        .stararea {
+            width: 50px;
+            height: 50px;
+            display: block;
+            position: relative;
+            color: #aaa;
+            font-size: 3em;
+            line-height: 50px;
+            cursor: pointer;
+            z-index: 10;
+            text-align: center;
+            &:before {
+                width: 50px;
+                height: 50px;
+                content: '★';
+                display: inline-block;
+                color: #95a5a6;
+                position: absolute;
+                left: 0;
+                top: -1px;
+                opacity: 0;
+                z-index: -1;
+            }
+            &:after {
+                width: 50px;
+                height: 50px;
+                content: '★';
+                display: inline-block;
+                color: #f1c40f;
+                position: absolute;
+                left: 0;
+                top: -1px;
+                opacity: 0;
+                z-index: -2;
+            }
+        }
+        &:hover .stararea {
+            color: #999;
+        }
+        &.active .stararea {
+            -webkit-animation: starbackground 500ms 1;
+            -moz-animation: starbackground 500ms 1;
+            -o-animation: starbackground 500ms 1;
+            animation: starbackground 500ms 1;
+            animation-delay: 250ms;
+            animation-fill-mode: forwards;
+            &:before {
+                -webkit-animation: staranimation 250ms 1;
+                -moz-animation: staranimation 250ms 1;
+                -o-animation: staranimation 250ms 1;
+                animation: staranimation 250ms 1;
+            }
+            &:after {
+                -webkit-animation: staranimation 350ms 1;
+                -moz-animation: staranimation 500ms 1;
+                -o-animation: staranimation 500ms 1;
+                animation: staranimation 500ms 1;
+                animation-delay: 250ms;
+            }
+        }
+    }
+    @-webkit-keyframes staranimation {
+        0% {
+            opacity: 0;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 0.5;
+        }
+        100% {
+            opacity: 0;
+            transform: scale(2);
+            top: -1px;
+        }
+    }
+    @-moz-keyframes staranimation {
+        0% {
+            opacity: 0;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 0.5;
+        }
+        100% {
+            opacity: 0;
+            transform: scale(2);
+            top: -1px;
+        }
+    }
+    @-o-keyframes staranimation {
+        0% {
+            opacity: 0;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 0.5;
+        }
+        100% {
+            opacity: 0;
+            transform: scale(2);
+            top: -1px;
+        }
+    }
+    @keyframes staranimation {
+        0% {
+            opacity: 0;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 0.5;
+        }
+        100% {
+            opacity: 0;
+            transform: scale(2);
+            top: -1px;
+        }
+    }
+    ///////////
+    @-webkit-keyframes starbackground {
+        0% {
+            color: #aaaaaa;
+        }
+        100% {
+            color: #f1c40f;
+        }
+    }
+    @-moz-keyframes starbackground {
+        0% {
+            color: #aaaaaa;
+        }
+        100% {
+            color: #f1c40f;
+        }
+    }
+    @-o-keyframes starbackground {
+        0% {
+            color: #aaaaaa;
+        }
+        100% {
+            color: #f1c40f;
+        }
+    }
+    @keyframes starbackground {
+        0% {
+            color: #aaaaaa;
+        }
+        100% {
+            color: #f1c40f;
+        }
     }
 }
 
@@ -285,7 +471,7 @@ ul {
 
 .usuario--sitio {
     a {
-        font-size: .9em;
+        font-size: .8em;
     }
 }
 
